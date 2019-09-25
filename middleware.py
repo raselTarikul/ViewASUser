@@ -106,8 +106,8 @@ class ViewAsMiddleware(MiddlewareMixin, BaseMiddleware):
         })
 
     def process_request(self, request):
-        # if not self.can_run(request):
-        #     return
+        if not self.can_run(request):
+            return
 
         request.actual_user = request.user
 
